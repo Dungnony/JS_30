@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n= parseInt(prompt());
+        function laSoNguyento(n){
+          if(n<2){
+            return false;
+          }
+          var i=2;
+          while(i<Math.sqrt(n)){
+            if(n%i==0){
+                return false;
+            }
+            i++;
+          }
+          return true;
+        }
+        if (laSoNguyento(n)){
+            document.write(n + "la so nguyen to");
+        }else{
+            document.write(n + "khong la so nguyen to");
+        }
+    </script>
+</body>
+</html>
