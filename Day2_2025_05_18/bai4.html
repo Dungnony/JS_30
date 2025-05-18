@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt();
+        function kiemtrmatkhau(str){
+            if (str.length < 8){
+                return false;
+            }
+            let coChuHoa= /[A-Z]/.test(str);
+            let coChuThuong= /[a-z]/.test(str);
+            let coso=/\d/.test(str);
+            if (coChuHoa&&CoChuthuong&&coso){
+                return true;
+            }else{
+                return fasle;
+            }
+        }
+        if (kiemtramatkhau(str)){
+            doucument.write("mat khau hop le");
+        }else{
+            document.write("mat khau khong hop le");
+        }
+    </script>
+</body>
+</html>
