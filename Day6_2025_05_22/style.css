@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-bar {
+  background-color: #e74c3c;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  color: white;
+  font-size: 16px;
+}
+
+.top-bar a {
+  margin-right: 15px;
+}
+
+.social-icons a {
+  margin-left: 10px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background-color: white;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+}
+
+.v-red {
+  color: red;
+}
+
+.banner {
+  background-color: #f5f5f5;
+  padding: 30px 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.banner-text {
+  color: #333;
+  font: weight bold;
+  font-size: 18px;
+}
+
+.banner-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  padding: 10px 40px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.main-nav ul li {
+  border-right: 1px solid #eee;
+  padding: 12px 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul li:first-child {
+  border-left: 1px solid #eee;
+}
+.main-nav a {
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+.main-nav a:hover {
+  color: #e74c3c;
+}
+.featured-posts {
+  display: flex;
+  padding: 10px 20px;
+}
+.featured-post {
+  flex: 1;
+  color: white;
+  position: relative;
+  height: 400px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.featured-post .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.featured-post .category-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+.category-technology { background-color: #5a78e5; }
+.category-environment { background-color: #c07cca; }
+.category-food { background-color: #52a552; }
+.featured-post h2 {
+  position: absolute;
+  bottom: 45px;
+  left: 12px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+.featured-post .date {
+  position: absolute;
+  bottom: 15px;
+  left: 12px;
+  font-size: 13px;
+}
+.post-1 {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+}
+.post-2 {
+  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+}
+.post-3 {
+  background: url('https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+}
