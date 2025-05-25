@@ -1,0 +1,24 @@
+body {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 9px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    select, button {
+      margin-top: 10px;
+      padding: 10px 16px;
+      font-size: 15px;
+    }
