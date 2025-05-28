@@ -1,0 +1,68 @@
+body{
+    background-color: #fffade;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+h1{
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.soduku-container{
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    grid-template-rows: repeat(3,150px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.cell{
+    background-color: #fff7e6;
+    border: 3px solid #dcd86c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.cell img{
+    width: 85%;
+    height: 85%;
+}
+.answer-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.answer-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.answer-cell{
+    background-color: #fff7e6;
+    border: 3px solid #dcd86c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+}
+.answer-cell img{
+    width: 85%;
+    height: 85%;
+}
+.cell img,
+.answer-cell img{
+   width: 85%;
+   height: 85%;
+   object-fit: cover;
+   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+   transition: transform 0.2s;
+   display: block;
+}
+.cell img:hover,
+.answer-cell img:hover{
+   transform: scale(1.1);
+}

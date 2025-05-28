@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soduku Trái Cây</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Soduku Trái Cây</h1>
+    <div class="soduku-container">
+        <div class="cell" data-fruit="strawberry"><img src="strawberry.png" alt="Dâu" draggable="false"/></div>
+        <div class="cell" data-fruit="orange"><img src="orange.png" alt="Cam" draggable="false"/></div>
+        <div class="cell" data-fruit="grape"><img src="grape.png" alt="Nho" draggable="false"/></div>
+
+        <div class="cell" data-fruit="grape"><img src="grape.png" alt="Nho" draggable="false"/></div>
+        <div class="cell" data-fruit="strawberry"><img src="strawberry.png" alt="Dâu" draggable="false"/></div>
+        <div class="cell empty" data-answer="orange"></div>
+
+        <div class="cell" data-fruit="orange"><img src="orange.png" alt="Cam" draggable="false"/></div>
+        <div class="cell empty" data-answer="grape"></div>
+        <div class="cell" data-fruit="strawberry"><img src="strawberry.png" alt="Dâu" draggable="false"/></div>
+    </div>
+    <div class="answer-title">Ô đáp án</div>
+    <div class="answer-container">
+        <div class="answer-cell">  <img src="grape.png" alt="Nho" draggable="true" data-fruit="grape"></div>
+        <div class="answer-cell">  <img src="strawberry.png" alt="Dâu" draggable="true" data-fruit="strawberry"></div>
+        <div class="answer-cell">  <img src="orange.png" alt="Cam" draggable="true" data-fruit="orange"></div>
+    </div>
+<script src="style.js"></script>
+</body>
+</html>
