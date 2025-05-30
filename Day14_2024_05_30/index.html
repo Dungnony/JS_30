@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thêm sinh viên</title>
+<link rel="stylesheet" href="style.css" >
+</head>
+<body>
+  <div class="container">
+    <h2>Thêm sinh viên vào danh sách</h2>
+    <form id="studentForm" onsubmit="return false;">
+      <label for="studentId">Mã sinh viên:</label>
+      <input type="text" id="studentId" required />
+      
+      <label for="fullName">Họ tên:</label>
+      <input type="text" id="fullName" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" pattern="[0-9]{9,12}" title="Số điện thoại gồm 9-12 chữ số" required />
+      
+      <button id="addBtn">Thêm</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Mã SV</th>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>SĐT</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="studentList">
+        <tr>
+          <td>UDU002</td>
+          <td>Ngô Thành Đạt</td>
+          <td>datngo@gmail.com</td>
+          <td>0987123123</td>
+          <td><button class="btn-sua" type="button">Sửa</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
