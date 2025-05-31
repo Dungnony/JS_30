@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Quản lý sản phẩm với thêm sản phẩm từ input</title>
+</head>
+<body>
+
+<h2>Quản lý sản phẩm</h2>
+<button onclick="addNewProduct()">Thêm sản phẩm mới</button>
+<button onclick="run()">Hiển thị thông tin sản phẩm</button>
+<pre id="output"></pre>
+
+<script>
+class Product {
+  constructor(id, name, price, quantity) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+  }
+}
+
+const products = [
+  new Product(1, "Laptop", 1500, 5),
+  new Product(2, "Smartphone", 800, 10),
+  new Product(3, "Tablet", 600, 7),
+];
+
+function addProduct(product) {
+  products.push(product);
+}
+
+function totalInventoryValue() {
+  let total = 0;
+  for (let p of products) {
+    total += p.price * p.quantity;
+  }
+  return total;
+}
+
+function findMostExpensiveProduct() {
+  let max = products[0];
+  for (let p of products) {
+    if (p.price > max.price) max = p;
+  }
+  return max;
+}
+
+function addNewProduct() {
+  const id = parseInt(prompt("Nhập ID sản phẩm mới:"));
+  const name = prompt("Nhập tên sản phẩm:");
+  const price = parseFloat(prompt("Nhập giá sản phẩm:"));
+  const quantity = parseInt(prompt("Nhập số lượng sản phẩm:"));
+
+  if (!id || !name || isNaN(price) || isNaN(quantity)) {
+    alert("Thông tin không hợp lệ, vui lòng thử lại!");
+    return;
+  }
+
+  addProduct(new Product(id, name, price, quantity));
+  alert("Đã thêm sản phẩm mới!");
+}
+
+function run() {
+  let output = "Danh sách sản phẩm:\n";
+  for (let p of products) {
+    output += `ID: ${p.id}, Name: ${p.name}, Price: ${p.price}, Quantity: ${p.quantity}\n`;
+  }
+
+  output += `\nTổng giá trị hàng tồn kho: ${totalInventoryValue()}\n`;
+
+  const expensive = findMostExpensiveProduct();
+  output += `Sản phẩm có giá cao nhất: ID: ${expensive.id}, Name: ${expensive.name}, Price: ${expensive.price}`;
+
+  document.getElementById("output").textContent = output;
+}
+</script>
+
+</body>
+</html>

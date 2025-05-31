@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Bài tập 2 - Employee</title>
+</head>
+<body>
+
+<h2>Bài tập 2: Tính lương nhân viên</h2>
+<button onclick="xuattrinh()">Hiển thị thông tin nhân viên và lương</button>
+<pre id="output"></pre>
+
+<script>
+class Employee {
+  constructor(name, position, baseSalary, workingDays) {
+    this.name = name;
+    this.position = position;
+    this.baseSalary = baseSalary;
+    this.workingDays = workingDays;
+  }
+
+  tinhluong() {
+    return this.baseSalary * this.workingDays;
+  }
+
+  show() {
+    return `Name: ${this.name}\nPosition: ${this.position}\nBase Salary: ${this.baseSalary}\nWorking Days: ${this.workingDays}\nTotal Salary: ${this.tinhluong()}\n------------------`;
+  }
+}
+
+function xuattrinh() {
+  const emp1 = new Employee("Le Van C", "Developer", 500, 22);
+  const emp2 = new Employee("Pham Thi D", "Designer", 450, 20);
+  const result = emp1.show() + "\n" + emp2.show();
+  document.getElementById('output').textContent = result;
+}
+</script>
+
+</body>
+</html>

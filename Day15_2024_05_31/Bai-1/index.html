@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Bài tập 1 - Student</title>
+</head>
+<body>
+
+<h2>Bài tập 1: Lớp Student</h2>
+<button onclick="runStudent()">In thông tin sinh viên</button>
+<pre id="output"></pre>
+
+<script>
+class Student {
+  constructor(id, name, email, age) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.age = age;
+  }
+
+  displayInfo() {
+    return `Student ID: ${this.id}\nName: ${this.name}\nEmail: ${this.email}\nAge: ${this.age}\n------------------`;
+  }
+}
+
+function runStudent() {
+  const student1 = new Student(1, "Nguyen Van A", "a.nguyen@example.com", 20);
+  const student2 = new Student(2, "Tran Thi B", "b.tran@example.com", 22);
+  const result = student1.displayInfo() + "\n" + student2.displayInfo();
+  document.getElementById('output').textContent = result;
+}
+</script>
+
+</body>
+</html>
