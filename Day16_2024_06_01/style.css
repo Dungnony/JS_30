@@ -1,0 +1,38 @@
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-top: 10px;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+button.edit {
+  background-color: #f4c542;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+button.delete {
+  background-color: #e14444;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+input[type="text"], input[type="number"] {
+  padding: 5px;
+  margin-right: 5px;
+  width: 150px;
+}
+button#addBtn {
+  margin-top: 10px;
+  padding: 6px 12px;
+}
