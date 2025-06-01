@@ -1,131 +1,120 @@
-class SanPham {
-  constructor(ma, ten, gia, soLuong) {
-    this.ma = ma;
-    this.ten = ten;
-    this.gia = gia;
-    this.soLuong = soLuong;
+class Product {
+  constructor(id, name, price, quantity) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
   }
 }
 
-let danhSachSanPham = [
-  new SanPham(1, 'Iphone 12', 6000000, 3),
-  new SanPham(2, 'Samsung S6', 1000000, 4)
+let products = [
+  new Product(1, 'Iphone 12', 6000000, 3),
+  new Product(2, 'Samsung S6', 1000000, 4)
 ];
 
-let maDangSua = null;
+let editingId = null;
 
-const inputMa = document.getElementById('productId');
-const inputTen = document.getElementById('productName');
-const inputGia = document.getElementById('productPrice');
-const inputSoLuong = document.getElementById('productQuantity');
-const nutThem = document.getElementById('addBtn');
-const bangSanPhamBody = document.querySelector('#productTable tbody');
-const tongGiaTriSpan = document.getElementById('totalValue');
-const sanPhamGiaCaoNhatSpan = document.getElementById('maxPriceProduct');
+const idInput = document.getElementById('id');
+const nameInput = document.getElementById('name');
+const priceInput = document.getElementById('price');
+const quantityInput = document.getElementById('quantity');
+const addBtn = document.getElementById('addBtn');
+const tableBody = document.getElementById('tableBody');
+const totalValueSpan = document.getElementById('totalValue');
+const maxPriceProductSpan = document.getElementById('maxPriceProduct');
 
-function dinhDangTienTe(so) {
-  return so.toLocaleString('vi-VN') + ' VNĐ';
+function formatCurrency(num) {
+  return num.toLocaleString('vi-VN') + ' VNĐ';
 }
 
-function hienThiBang() {
-  bangSanPhamBody.innerHTML = '';
-  danhSachSanPham.forEach(sp => {
+function render() {
+  tableBody.innerHTML = '';
+  products.forEach(p => {
     const tr = document.createElement('tr');
-
     tr.innerHTML = `
-      <td>${sp.ma}</td>
-      <td>${sp.ten}</td>
-      <td>${dinhDangTienTe(sp.gia)}</td>
-      <td>${sp.soLuong}</td>
-      <td>${dinhDangTienTe(sp.gia * sp.soLuong)}</td>
+      <td>${p.id}</td>
+      <td>${p.name}</td>
+      <td>${formatCurrency(p.price)}</td>
+      <td>${p.quantity}</td>
+      <td>${formatCurrency(p.price * p.quantity)}</td>
       <td>
-        <button class="edit" onclick="suaSanPham(${sp.ma})">Sửa</button>
-        <button class="delete" onclick="xoaSanPham(${sp.ma})">Xóa</button>
-      </td>
-    `;
-
-    bangSanPhamBody.appendChild(tr);
+        <button onclick="editProduct(${p.id})">Sửa</button>
+        <button onclick="deleteProduct(${p.id})">Xóa</button>
+      </td>`;
+    tableBody.appendChild(tr);
   });
 
-  const tong = danhSachSanPham.reduce((tong, sp) => tong + sp.gia * sp.soLuong, 0);
-  tongGiaTriSpan.textContent = dinhDangTienTe(tong);
+  const total = products.reduce((sum, p) => sum + p.price * p.quantity, 0);
+  totalValueSpan.textContent = formatCurrency(total);
 
-  if(danhSachSanPham.length > 0) {
-    let sanPhamGiaCaoNhat = danhSachSanPham.reduce((max, sp) => sp.gia > max.gia ? sp : max, danhSachSanPham[0]);
-    sanPhamGiaCaoNhatSpan.textContent = `${sanPhamGiaCaoNhat.ten} (${dinhDangTienTe(sanPhamGiaCaoNhat.gia)})`;
+  if (products.length > 0) {
+    const maxP = products.reduce((max, p) => p.price > max.price ? p : max, products[0]);
+    maxPriceProductSpan.textContent = `${maxP.name} (${formatCurrency(maxP.price)})`;
   } else {
-    sanPhamGiaCaoNhatSpan.textContent = 'Chưa có sản phẩm';
+    maxPriceProductSpan.textContent = 'Chưa có';
   }
 }
 
-function xoaForm() {
-  inputMa.value = '';
-  inputTen.value = '';
-  inputGia.value = '';
-  inputSoLuong.value = '';
-  maDangSua = null;
-  nutThem.textContent = 'Thêm';
+function clearForm() {
+  idInput.value = '';
+  nameInput.value = '';
+  priceInput.value = '';
+  quantityInput.value = '';
+  editingId = null;
+  addBtn.textContent = 'Thêm';
 }
 
-function themHoacCapNhatSanPham() {
-  const ma = parseInt(inputMa.value);
-  const ten = inputTen.value.trim();
-  const gia = parseInt(inputGia.value);
-  const soLuong = parseInt(inputSoLuong.value);
+function addOrUpdate() {
+  const id = Number(idInput.value);
+  const name = nameInput.value.trim();
+  const price = Number(priceInput.value);
+  const quantity = Number(quantityInput.value);
 
-  if(isNaN(ma) || !ten || isNaN(gia) || isNaN(soLuong)) {
-    alert('Vui lòng nhập đầy đủ và đúng định dạng các trường!');
+  if (!id || !name || !price || !quantity) {
+    alert('Vui lòng nhập đầy đủ thông tin hợp lệ');
     return;
   }
 
-  if(maDangSua === null) {
-    if(danhSachSanPham.some(sp => sp.ma === ma)) {
-      alert('Mã sản phẩm đã tồn tại. Vui lòng chọn mã khác.');
+  if (editingId === null) {
+    if (products.some(p => p.id === id)) {
+      alert('ID đã tồn tại!');
       return;
     }
-    danhSachSanPham.push(new SanPham(ma, ten, gia, soLuong));
+    products.push(new Product(id, name, price, quantity));
   } else {
-    if(ma !== maDangSua && danhSachSanPham.some(sp => sp.ma === ma)) {
-      alert('Mã sản phẩm đã tồn tại. Vui lòng chọn mã khác.');
+    if (id !== editingId && products.some(p => p.id === id)) {
+      alert('ID đã tồn tại!');
       return;
     }
-
-    const sp = danhSachSanPham.find(sp => sp.ma === maDangSua);
-    sp.ma = ma;
-    sp.ten = ten;
-    sp.gia = gia;
-    sp.soLuong = soLuong;
-    maDangSua = null;
-    nutThem.textContent = 'Thêm';
+    const p = products.find(p => p.id === editingId);
+    p.id = id; p.name = name; p.price = price; p.quantity = quantity;
+    editingId = null;
+    addBtn.textContent = 'Thêm';
   }
 
-  hienThiBang();
-  xoaForm();
+  render();
+  clearForm();
 }
 
-function suaSanPham(ma) {
-  const sp = danhSachSanPham.find(sp => sp.ma === ma);
-  if(!sp) return;
-
-  inputMa.value = sp.ma;
-  inputTen.value = sp.ten;
-  inputGia.value = sp.gia;
-  inputSoLuong.value = sp.soLuong;
-
-  maDangSua = ma;
-  nutThem.textContent = 'Lưu';
+function editProduct(id) {
+  const p = products.find(p => p.id === id);
+  if (!p) return;
+  idInput.value = p.id;
+  nameInput.value = p.name;
+  priceInput.value = p.price;
+  quantityInput.value = p.quantity;
+  editingId = id;
+  addBtn.textContent = 'Lưu';
 }
 
-function xoaSanPham(ma) {
-  if(confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
-    danhSachSanPham = danhSachSanPham.filter(sp => sp.ma !== ma);
-    hienThiBang();
-    if(maDangSua === ma) {
-      xoaForm();
-    }
+function deleteProduct(id) {
+  if (confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
+    products = products.filter(p => p.id !== id);
+    render();
+    if (editingId === id) clearForm();
   }
 }
 
-nutThem.addEventListener('click', themHoacCapNhatSanPham);
+addBtn.onclick = addOrUpdate;
 
-hienThiBang();
+render();
