@@ -1,38 +1,90 @@
-table {
-  border-collapse: collapse;
-  width: 80%;
-  margin-top: 10px;
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+  background-color: #f9f9f9;
+  color: #333;
 }
-table, th, td {
-  border: 1px solid #ddd;
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
-th, td {
-  padding: 8px;
-  text-align: left;
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
-th {
-  background-color: #f2f2f2;
+
+.form-group input {
+  flex: 1 1 100px;
+  padding: 8px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-button.edit {
-  background-color: #f4c542;
+
+.form-group button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
   border: none;
-  color: black;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-button.delete {
-  background-color: #e14444;
-  border: none;
+  border-radius: 4px;
   color: white;
-  padding: 5px 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
-input[type="text"], input[type="number"] {
-  padding: 5px;
-  margin-right: 5px;
-  width: 150px;
+
+.form-group button:hover {
+  background-color: #0056b3;
 }
-button#addBtn {
-  margin-top: 10px;
-  padding: 6px 12px;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:nth-child(1) {
+  background-color: #ffc107;
+  color: #333;
+}
+
+button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 15px;
 }
