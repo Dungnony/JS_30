@@ -1,101 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quản lý sản phẩm</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      margin: 20px auto;
-      padding: 20px auto;
-      max-width: 800px;
-    }
-    h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .form-group {
-      margin-bottom: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .form-group input {
-      flex: 1 1 100px;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    .form-group button {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      background-color: #007bff;
-      color: white;
-      font-size: 16px;
-    }
-    .form-group button:hover {
-      background-color: #0056b3;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px 12px;
-      text-align: center;
-    }
-    th {
-      background-color: #f0f0f0;
-      font-weight: bold;
-    }
-    button.action-btn {
-      margin-left: 5px;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.2s;
-    }
-    button.edit-btn {
-      color: #333;
-      background-color: #ffc107;
-    }
-    button.edit-btn:hover {
-      background-color: #e0a800;
-    }
-    button.delete-btn {
-      background-color: #dc3545;
-      color: white;
-    }
-    button.delete-btn:hover {
-      background-color: #b02a37;
-    }
-    p {
-      font-size: 18px;
-      margin-top: 15px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2>Quản lý sản phẩm</h2>
-  <div class="form-group">
-    <input id="id" type="number" placeholder="ID" />
-    <input id="name" type="text" placeholder="Tên sản phẩm" />
-    <input id="price" type="number" placeholder="Giá sản phẩm" />
-    <input id="quantity" type="number" placeholder="Số lượng sản phẩm" />
+  <div class="form-group" >
+    <input id="id" type="numeber" placeholder="ID">
+    <input id="name" type="text" placeholder="Tên sản phẩm">
+    <input id="price" type="number" placeholder="Giá sản phẩm">
+    <input id="quantity" type="number" placeholder="Số lượng sản phẩm">
     <button id="addBtn">Thêm</button>
-  </div>
+  </div> 
   <table>
     <thead>
       <tr>
@@ -107,189 +26,10 @@
         <th>Hành động</th>
       </tr>
     </thead>
-    <tbody id="tableBody">
-      <tr data-id="1">
-        <td>1</td>
-        <td>Iphone 12</td>
-        <td>6,000,000 VNĐ</td>
-        <td>3</td>
-        <td>18,000,000 VNĐ</td>
-        <td>
-          <button class="action-btn edit-btn">Sửa</button>
-          <button class="action-btn delete-btn">Xóa</button>
-        </td>
-      </tr>
-      <tr data-id="2">
-        <td>2</td>
-        <td>Samsung S6</td>
-        <td>1,000,000 VNĐ</td>
-        <td>4</td>
-        <td>4,000,000 VNĐ</td>
-        <td>
-          <button class="action-btn edit-btn">Sửa</button>
-          <button class="action-btn delete-btn">Xóa</button>
-        </td>
-      </tr>
-    </tbody>
+    <tbody id="tableBody"></tbody>
   </table>
-  <p><b>Tổng giá trị tồn kho: </b><span id="totalValue">22,000,000 VNĐ</span></p>
-  <p><b>Sản phẩm đắt nhất: </b><span id="maxPriceProduct">Iphone 12 (6,000,000 VNĐ)</span></p>
-
-  <script>
-    class Product {
-      constructor(id, name, price, quantity) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-      }
-    }
-
-    // Khởi tạo mảng products dựa trên 2 dòng HTML có sẵn
-    let products = [
-      new Product(1, "Iphone 12", 6000000, 3),
-      new Product(2, "Samsung S6", 1000000, 4),
-    ];
-
-    let editingId = null;
-
-    const idInput = document.getElementById("id");
-    const nameInput = document.getElementById("name");
-    const priceInput = document.getElementById("price");
-    const quantityInput = document.getElementById("quantity");
-    const addBtn = document.getElementById("addBtn");
-    const tableBody = document.getElementById("tableBody");
-    const totalValueSpan = document.getElementById("totalValue");
-    const maxPriceProductSpan = document.getElementById("maxPriceProduct");
-
-    function formatCurrency(num) {
-      return num.toLocaleString("vi-VN") + " VNĐ";
-    }
-
-    // Cập nhật bảng dựa trên mảng products
-    function updateTable() {
-      // Xoá hết các dòng hiện có (để tránh trùng)
-      tableBody.innerHTML = "";
-      for (const p of products) {
-        const tr = document.createElement("tr");
-        tr.dataset.id = p.id;
-        tr.innerHTML = `
-          <td>${p.id}</td>
-          <td>${p.name}</td>
-          <td>${formatCurrency(p.price)}</td>
-          <td>${p.quantity}</td>
-          <td>${formatCurrency(p.price * p.quantity)}</td>
-          <td>
-            <button class="action-btn edit-btn">Sửa</button>
-            <button class="action-btn delete-btn">Xóa</button>
-          </td>`;
-        tableBody.appendChild(tr);
-      }
-      updateSummary();
-    }
-
-    // Cập nhật tổng giá trị tồn kho và sản phẩm đắt nhất
-    function updateSummary() {
-      const total = products.reduce(
-        (sum, p) => sum + p.price * p.quantity,
-        0
-      );
-      totalValueSpan.textContent = formatCurrency(total);
-
-      if (products.length > 0) {
-        const maxP = products.reduce((max, p) =>
-          p.price > max.price ? p : max,
-          products[0]
-        );
-        maxPriceProductSpan.textContent = `${maxP.name} (${formatCurrency(
-          maxP.price
-        )})`;
-      } else {
-        maxPriceProductSpan.textContent = "Chưa có";
-      }
-    }
-
-    function clearForm() {
-      idInput.value = "";
-      nameInput.value = "";
-      priceInput.value = "";
-      quantityInput.value = "";
-      editingId = null;
-      addBtn.textContent = "Thêm";
-    }
-
-    function addOrUpdate() {
-      const id = Number(idInput.value);
-      const name = nameInput.value.trim();
-      const price = Number(priceInput.value);
-      const quantity = Number(quantityInput.value);
-
-      if (!id || !name || !price || !quantity) {
-        alert("Vui lòng nhập đầy đủ thông tin hợp lệ");
-        return;
-      }
-
-      if (editingId === null) {
-        if (products.some((p) => p.id === id)) {
-          alert("ID đã tồn tại!");
-          return;
-        }
-        products.push(new Product(id, name, price, quantity));
-      } else {
-        if (id !== editingId && products.some((p) => p.id === id)) {
-          alert("ID đã tồn tại!");
-          return;
-        }
-        const p = products.find((p) => p.id === editingId);
-        p.id = id;
-        p.name = name;
-        p.price = price;
-        p.quantity = quantity;
-        editingId = null;
-        addBtn.textContent = "Thêm";
-      }
-
-      updateTable();
-      clearForm();
-    }
-
-    // Bắt sự kiện cho nút Sửa và Xóa thông qua event delegation
-    tableBody.addEventListener("click", function (e) {
-      const target = e.target;
-      if (target.classList.contains("edit-btn")) {
-        const tr = target.closest("tr");
-        const id = Number(tr.dataset.id);
-        editProduct(id);
-      } else if (target.classList.contains("delete-btn")) {
-        const tr = target.closest("tr");
-        const id = Number(tr.dataset.id);
-        deleteProduct(id);
-      }
-    });
-
-    function editProduct(id) {
-      const p = products.find((p) => p.id === id);
-      if (!p) return;
-      idInput.value = p.id;
-      nameInput.value = p.name;
-      priceInput.value = p.price;
-      quantityInput.value = p.quantity;
-      editingId = id;
-      addBtn.textContent = "Lưu";
-    }
-
-    function deleteProduct(id) {
-      if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
-        products = products.filter((p) => p.id !== id);
-        updateTable();
-        if (editingId === id) clearForm();
-      }
-    }
-
-    addBtn.onclick = addOrUpdate;
-
-    // Khởi tạo bảng lần đầu (đã có 2 sản phẩm sẵn nhưng cần đồng bộ lại bảng với mảng)
-    updateTable();
-  </script>
-</body>
+  <p><b>Tổng giá trị tồn kho: </b> <spam id="totalValue">0</spam></p>
+  <p><b>Sản phẩm đắt nhất: </b><span id="Maxprice">Chưa có</span></p>
+  <script src="script.js"></script>
+  </body>
 </html>
