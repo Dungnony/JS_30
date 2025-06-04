@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chiase.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog</div>
+       <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <form class="search-form" action="#" method="GET">
+          <input type="text" name="query" placeholder="" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="hero-text">
+        <h1>📔 ✨ "Không có người yêu không có nghĩa là cô đơn <br> chỉ là mình đang học cách yêu bản thân trước đã."</h1>
+        
+       <p style="font-size: 0.9em; font-style: italic; color: white;">
+   Đăng bởi Dũng vào ngày 12 tháng 5 năm 2025
+</p>
+
+
+      </div>
+  </header>
+     <div class="center-text">
+    <p>🌿 Độc thân – Không buồn, không vội</p>
+    <p>Có những tối nằm nghe nhạc, mình bất chợt nghĩ:</p>
+    <p>"Ủa, sao mình vẫn chưa có người yêu nhỉ?"</p>
+    <p>Không phải là sợ yêu.</p>
+    <p>Chỉ là… mình chưa muốn đánh đổi sự bình yên hiện tại cho một mối quan hệ chưa chắc phù hợp.</p>
+    <p>💭 Có cô đơn không? </p>
+    <p>Có chứ...</p>
+    <p>Đôi lúc thấy người ta nắm tay nhau, cũng chạnh lòng.</p>
+    <p>Những hôm mệt mỏi, cũng muốn có ai hỏi han.</p>
+    <p>Nhưng rồi mình học cách tự an ủi, tự chăm sóc và tự vui với chính mình:</p>
+    <p>📖 đọc sách<br>
+        💪 tập thể dục,<br>
+        🕹️ chơi game,<br>
+        📚 học điều mới.</p>
+  <div>
+    <p>Và hơn hết, mình học cách tự làm mình hạnh phúc.</p>
+    <p>🌱 Độc thân – Một hành trình có giá trị</p>
+    <p>Không phải “chờ có người yêu” mà là chờ đúng người.</p>
+    <p>Không yêu để lấp đầy khoảng trống, mà yêu khi mình đã đủ đầy.</p>
+    <p>Hy vọng câu chuyện này sẽ truyền cảm hứng cho bạn và những người đọc blog của bạn!</p>
+    <p>💌 Nếu bạn cũng đang độc thân...</p>
+    <p>Đừng vội.<br>
+ Bạn không thiếu gì cả. Bạn chỉ đang trong giai đoạn xây dựng phiên bản tốt nhất của chính mình.</p>
+    <p>Và biết đâu, trong lúc bạn sống thật tốt…<br>
+   Ai đó cũng đang trên đường đến, đúng người – đúng lúc.</p>
+  </div>
+  
+  </div>
+  <section class="filters">
+  <a href="../Tagnhatky/Tagnhatky.html" class="tag-link">
+    <button class="tag">Nhật ký</button>
+  </a>
+  <a href="../Taguocmo/Taguocmo.html" class="tag-link">
+    <button class="tag">Ước Mơ</button>
+  </a>
+  <a href="../Tagghichephoctap/Tagghichephoctap.html" class="tag-link">
+    <button class="tag">Ghi Chép Học Tập</button>
+  </a>
+  <a href="../Tagcamxuc/Tagcamxuc.html" class="tag-link">
+    <button class="tag">Cảm Xúc</button>
+  </a>
+  <a href="../Tagchiase/Tagchiase.html" class="tag-link">
+    <button class="tag">Chia sẻ</button>
+  </a>
+</section>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit" id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>

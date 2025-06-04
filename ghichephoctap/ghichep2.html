@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ghichep2.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog</div>
+        <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <form class="search-form" action="#" method="GET">
+          <input type="text" name="query" placeholder="" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="hero-text">
+        <h1>📝 Ghi Chép Học Tập: Làm Quen Với HTML, CSS và JavaScript</h1>
+        <p><i>✨ "Học web không chỉ là viết code, mà còn là hành trình xây nên thế giới số của riêng bạn."</i></p>
+       <p style="font-size: 0.9em; font-style: italic; color: white;">
+   Đăng bởi Dũng vào ngày 8 tháng 5 năm 2025
+</p>
+      </div>
+  </header>
+     <div class="center-text">
+   <p></p>
+  <div>
+    <p>HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc trang web.</p>
+    <div class="code-box">
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Trang web đầu tiên&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Xin chào!&lt;/h1&gt;
+  &lt;p&gt;Chào mừng bạn đến với blog học lập trình.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>      
+    </div>
+    <p>🧠 Ghi nhớ:</p>
+    <p> h1 đến h6: tiêu đề từ lớn đến nhỏ</p>
+    <p>p: đoạn văn bản</p>
+    <p>img, a, ul, div... là các thẻ cấu trúc khác</p>
+    <p>🔹 Phần 2: CSS – Trang điểm cho trang web</p>
+    <p>CSS (Cascading Style Sheets) dùng để thiết kế giao diện: màu sắc, font chữ, bố cục,...</p>
+    <p>📌 Ví dụ: Thêm màu và căn giữa tiêu đề</p>
+    <div class="code-box">
+        <pre><code class="language-css">
+&lt;style&gt;
+  h1 {
+    color: #2c7a7b;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+&lt;/style&gt;
+</code></pre>
+    </div>
+    <p>📎 CSS có thể viết ở:</p>
+    <p>Trong thẻ style (nội tuyến)</p>
+    <p>Tệp .css riêng: style.css</p>
+    <p>Gắn vào thẻ (inline): h1 style="color: red">/h1</p>
+    <p>🔹 Phần 3: JavaScript – Tạo sự tương tác</p>
+    <p>JavaScript giúp trang web có hành động, ví dụ: khi click, hiển thị cảnh báo, xử lý form,...</p>
+    <p>📌 Ví dụ: Khi nhấn nút sẽ hiện alert</p>
+    <div class="code-box">
+        <pre><code class="language-html">
+&lt;button onclick="sayHello()"&gt;Nhấn tôi!&lt;/button&gt;
+
+&lt;script&gt;
+  function sayHello() {
+    alert("Xin chào bạn!");
+  }
+&lt;/script&gt;
+</code></pre>
+    </div>
+    <p>🧠 JS có thể làm được:</p>
+    <p>Bắt sự kiện (click, nhập liệu,...)</p>
+    <p>Thay đổi nội dung HTML</p>
+    <p>Kiểm tra dữ liệu form</p>
+    <p>Giao tiếp với server (AJAX)</p>
+    <p>💬 Kết luận</p>
+    <p>Học HTML, CSS, JS là bước đầu tiên để trở thành lập trình viên web. Dù mới bắt đầu, nhưng mỗi dòng code là một bước tiến. Cứ kiên trì, bạn sẽ thấy thành quả!</p>
+  </div>
+  </div>
+  <section class="filters">
+  <a href="../Tagnhatky/Tagnhatky.html" class="tag-link">
+    <button class="tag">Nhật ký</button>
+  </a>
+  <a href="../Taguocmo/Taguocmo.html" class="tag-link">
+    <button class="tag">Ước Mơ</button>
+  </a>
+  <a href="../Tagghichephoctap/Tagghichephoctap.html" class="tag-link">
+    <button class="tag">Ghi Chép Học Tập</button>
+  </a>
+  <a href="../Tagcamxuc/Tagcamxuc.html" class="tag-link">
+    <button class="tag">Cảm Xúc</button>
+  </a>
+  <a href="../Tagchiase/Tagchiase.html" class="tag-link">
+    <button class="tag">Chia sẻ</button>
+  </a>
+</section>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit" id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>

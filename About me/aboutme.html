@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="aboutme.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog
+        </div>
+        <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <!-- serach bar -->
+         <form class="search-form" action="#" method="GET">
+        <input type="text" name="query" placeholder="" aria-label="Search" />
+        <button type="submit">Search</button>
+      </form>
+      </nav>
+      <div class="hero-text">
+        <h1>Lời mở đầu</h1>
+        <p>"Xin chào, tôi là Tiến Dũng"</p>
+      
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="main-content">
+      <article class="post">
+        <div>
+            <h2>Giới thiệu cơ bản về tôi:</h2>
+        <p>Xin chào, Tôi là Tiến Dũng, một sinh viên IT  nhàn rỗi và thư giãn. Hiện tại tôi đang sinh sống tại Hà Nội
+        và theo học Tại Học Viện Công Nghệ Bưu Chính Viễn Thông. Tôi thích tất cả các loại thể thao và âm nhạc,
+        đặc biệt là bóng đá và bóng rổ. Tôi cũng thích đọc sách và xem phim, đặc biệt là các bộ phim hành động và khoa học viễn tưởng.
+        
+        </div>
+        <div>
+            Tôi là một chàng trai khoa học và kỹ thuật đầy mâu thuẫn, đôi khi tình cảm đôi khi lý trí,
+             đôi khi quá im lặng đến nỗi chỉ muốn đọc hoặc làm điều gì đó mình thích, và đôi khi quá sôi nổi đến nỗi chỉ muốn vui vẻ với bạn bè.
+             Bạn có thể tìm thấy tôi thông qua nhiều phương thức liên hệ khác nhau ở cuối blog hoặc trong thanh bên và bạn có thể chia sẻ bất kỳ câu hỏi và tin nhắn nào với tôi.
+        </div>    
+     </p>
+      </article>
+      <article class="post">
+        <h2>Giới thiệu về blog của tôi: </h2>
+        <p>Đây là blog cá nhân của tôi được xây dựng dựa trên HTML, CSS nhằm mục đích trao đổi chia sẻ học tập và nghiên cứu </p>
+      </article>
+    </section>
+
+    <aside class="sidebar">
+      <div class="tags">
+        <h4>Outstading Tag </h4>
+        <div class="tag-list">
+          <span>Nhật Ký</span>
+          <span>Ước Mơ</span>
+          <span>Ghi Chép Học Tập</span>
+          <span>Cảm Xúc</span>
+          <span>Chia sẻ </span>
+        </div>
+      </div>
+      <div class="about">
+        <h4>About Me</h4>
+        <img src="me.jpg" alt="Me" />
+   <h5>
+  "Cuộc sống giống như một con sâu biến thành một con bướm.
+  Sau những thử thách và đau khổ, bạn sẽ được tự do ôm trọn bầu trời xanh."<br>
+  "Tất nhiên, chúng ta không nên bỏ cuộc trước khi ngày đó đến.
+  Chúng ta nên tràn đầy hy vọng vào cuộc sống và tự tin vào bản thân mình." <br>
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://img.icons8.com/?size=50&id=12599&format=png" alt="Github của tôi" style="width: 40px; height: 40px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/2504/2504903.png" alt="Gmail cua toi" style="width: 40px; height: 40px; padding-top: 10px; padding-left: 30px">
+  </a>
+  
+      </div>
+    </aside>
+  </main>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit"  id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>
+
+</body>
+</html>

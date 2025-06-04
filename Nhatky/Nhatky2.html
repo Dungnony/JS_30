@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nhatky2.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog</div>
+       <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <form class="search-form" action="#" method="GET">
+          <input type="text" name="query" placeholder="" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="hero-text">
+        <h1>"📔 Nhật ký ngày nghỉ <br>Một ngày lười biếng đúng nghĩa"</h1>
+        <p>Chủ Nhật, ngày 11 tháng 5 năm 2025</p>
+       <p style="font-size: 0.9em; font-style: italic; color: white;">
+   Đăng bởi Dũng vào ngày 11 tháng 5 năm 2025
+</p>
+
+      </div>
+  </header>
+     <div class="center-text">
+    <p>Hôm nay là một ngày nghỉ hiếm hoi sau chuỗi ngày chạy deadline mệt mỏi. </p>
+    <p>Không cần báo thức, không có những dòng code rối tung, không còn deadline dí sát gáy</p>
+    <p>Mình thức dậy lúc... gần trưa (😅), rồi nằm thêm một lúc nữa chỉ để ngắm trần nhà và tận hưởng cảm giác không phải vội vã.</p>
+    <p>Sau đó là một bữa sáng kiêm luôn bữa trưa – mì trứng và một ly cafe đen tự pha</p>
+    <p> Nghe đơn giản vậy thôi mà ngon đến lạ, chắc là vì hôm nay mình ăn trong tâm thế thoải mái. </p>
+    <p>Chiều mình dành thời gian đọc tiếp cuốn sách dở dang, rồi dọn dẹp lại góc học tập một chút.  </p>
+    <p>Có thời gian rảnh, mình cũng ngồi suy nghĩ lại về vài chuyện – về những điều đã qua và những gì mình đang hướng tới.</p>
+    <p>Tối thì rủ mấy đứa bạn thân đi dạo một vòng quanh hồ, tám chuyện trên trời dưới biển.</p>
+    <p> Đôi khi không cần đi đâu xa, chỉ cần vài người bạn hợp cạ là đã đủ để có một buổi tối vui vẻ và ấm lòng.</p>
+    <p>Kết thúc ngày nghỉ bằng một bản nhạc nhẹ, một tách trà ấm..</p>
+    <p> Ngày hôm nay không có gì đặc biệt, nhưng chính sự bình yên ấy lại khiến mình cảm thấy hạnh phúc một cách trọn vẹn. </p>
+  <div>
+ 
+  </div>
+  </div>
+  <section class="filters">
+  <a href="../Tagnhatky/Tagnhatky.html" class="tag-link">
+    <button class="tag">Nhật ký</button>
+  </a>
+  <a href="../Taguocmo/Taguocmo.html" class="tag-link">
+    <button class="tag">Ước Mơ</button>
+  </a>
+  <a href="../Tagghichephoctap/Tagghichephoctap.html" class="tag-link">
+    <button class="tag">Ghi Chép Học Tập</button>
+  </a>
+  <a href="../Tagcamxuc/Tagcamxuc.html" class="tag-link">
+    <button class="tag">Cảm Xúc</button>
+  </a>
+  <a href="../Tagchiase/Tagchiase.html" class="tag-link">
+    <button class="tag">Chia sẻ</button>
+  </a>
+</section>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit" id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>

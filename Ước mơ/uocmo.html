@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="uocmo.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog</div>
+       <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <form class="search-form" action="#" method="GET">
+          <input type="text" name="query" placeholder="" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="hero-text">
+        <h1>"Chìa Khóa Của <br>Cuộc Sống Thư Thái"</h1>
+       <p style="font-size: 0.9em; font-style: italic; color: white;">
+   Đăng bởi Dũng vào ngày 5 tháng 5 năm 2025
+</p>
+
+      </div>
+  </header>
+     <div class="center-text">
+    <p>Trong cuộc sống, đôi khi chúng ta luôn chạy theo những mục tiêu lớn lao mà quên mất rằng hạnh phúc và sự thư thái đến từ những điều giản dị.</p>
+    <p>Có người dành cả đời để tìm kiếm sự giàu có, nhưng lại bỏ qua những khoảnh khắc quý giá bên gia đình, bạn bè và bản thân.</p>
+    <p>Tôi cũng từng có những ngày miệt mài với công việc, với những con số và kế hoạch không ngừng nghỉ.</p>
+    <p>Nhưng rồi một ngày, tôi nhận ra rằng cuộc sống không chỉ là việc kiếm tiền hay đạt được những thành tựu.</p>
+    <p>Mà chính là việc tìm ra sự cân bằng – giữa công việc và nghỉ ngơi, giữa mơ ước và thực tế, giữa thành công và bình yên trong tâm hồn.</p>
+    <p>Giàu có không chỉ là vật chất, mà còn là sự thư thái trong lòng. </p>
+    <p>Đó là khi bạn có thể ngồi nhắm mắt và cảm nhận từng khoảnh khắc cuộc sống, khi bạn có thể mỉm cười dù cho thế giới ngoài kia có vội vã đến đâu.</p>
+    <p>Chìa khóa của cuộc sống thư thái là không để mình bị cuốn vào guồng quay không ngừng nghỉ, mà biết cách dừng lại, thư giãn và sống trọn vẹn với hiện tại.</p>
+    <p>Sống giàu có không chỉ là về tiền bạc, mà là sống đầy đủ, trọn vẹn và hạnh phúc trong chính mình.
+</p>
+  <div>
+    <p>Hy vọng câu chuyện này sẽ truyền cảm hứng cho bạn và những người đọc blog của bạn!</p>
+  </div>
+  </div>
+  <section class="filters">
+  <a href="../Tagnhatky/Tagnhatky.html" class="tag-link">
+    <button class="tag">Nhật ký</button>
+  </a>
+  <a href="../Taguocmo/Taguocmo.html" class="tag-link">
+    <button class="tag">Ước Mơ</button>
+  </a>
+  <a href="../Tagghichephoctap/Tagghichephoctap.html" class="tag-link">
+    <button class="tag">Ghi Chép Học Tập</button>
+  </a>
+  <a href="../Tagcamxuc/Tagcamxuc.html" class="tag-link">
+    <button class="tag">Cảm Xúc</button>
+  </a>
+  <a href="../Tagchiase/Tagchiase.html" class="tag-link">
+    <button class="tag">Chia sẻ</button>
+  </a>
+</section>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit" id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>

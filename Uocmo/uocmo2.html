@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án giữa kỳ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="uocmo2.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <nav class="navbar">
+        <div class="logo">My Blog</div>
+       <ul class="nav-links">
+          <li id="Home"><a href="../Home/index.html">Home</a></li>
+          <li id="Aboutme"><a href="../About me/aboutme.html">About Me</a></li>
+          <li id="Archive"><a href="../Archive/archive.html">Archive</a></li>
+        </ul>
+        <form class="search-form" action="#" method="GET">
+          <input type="text" name="query" placeholder="" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="hero-text">
+        <h1>Ước Mơ Về Một Tương Lai <br> Bình Yên và Ổn Định</h1>
+       <p style="font-size: 0.9em; font-style: italic; color: white;">
+   <i>Đăng bởi Dũng vào ngày 6 tháng 5 năm 2025</i>
+</p>
+
+      </div>
+  </header>
+     <div class="center-text">
+    <p>Giữa nhịp sống ngày càng vội vã, đôi khi mình tự hỏi: "Sau tất cả những cố gắng, mình thật sự mong điều gì cho tương lai?"</p>
+    <p>Có người mơ ước giàu sang, có người muốn đi thật xa, còn mình – mình chỉ mong một cuộc sống ổn định và bình yên.</p>
+    <p>Không ồn ào, không phải cạnh tranh khốc liệt, cũng không cần phải hơn ai cả.</p>
+    <p>Chỉ cần mỗi sáng thức dậy, được làm công việc mình yêu thích, có một ngôi nhà nhỏ ấm áp.</p>
+    <p>Và sức khỏe để sống trọn từng ngày – với mình, đó đã là hạnh phúc thật sự./p>
+    <p>Mình biết, để đạt được sự ổn định ấy, cần rất nhiều nỗ lực. </p>
+    <p>Là sinh viên, mình đang học cách tự lập, rèn luyện thói quen sống có kế hoạch, và xây dựng một nền tảng vững chắc cho tương lai.</p>
+    <p>Mình không đặt áp lực phải thành công rực rỡ, chỉ mong mỗi bước đi đều vững vàng, và không đánh mất chính mình trên hành trình đó.</p>
+    <p>Tương lai của mình có thể không hào nhoáng, nhưng mình tin nó sẽ đủ ấm, đủ yên, đủ đáng sống. </p>
+  <div>
+    <p>Hy vọng câu chuyện này sẽ truyền cảm hứng cho bạn và những người đọc blog của bạn!</p>
+  </div>
+  </div>
+  <section class="filters">
+  <a href="../Tagnhatky/Tagnhatky.html" class="tag-link">
+    <button class="tag">Nhật ký</button>
+  </a>
+  <a href="../Taguocmo/Taguocmo.html" class="tag-link">
+    <button class="tag">Ước Mơ</button>
+  </a>
+  <a href="../Tagghichephoctap/Tagghichephoctap.html" class="tag-link">
+    <button class="tag">Ghi Chép Học Tập</button>
+  </a>
+  <a href="../Tagcamxuc/Tagcamxuc.html" class="tag-link">
+    <button class="tag">Cảm Xúc</button>
+  </a>
+  <a href="../Tagchiase/Tagchiase.html" class="tag-link">
+    <button class="tag">Chia sẻ</button>
+  </a>
+</section>
+  <div class="form-box">
+  <div class="form-header">
+    <div>Hộp thư</div>
+    <div>Ý kiến của bạn?</div>
+  </div>
+
+  <textarea placeholder="Nhập nội dung..." id="inputField"></textarea>
+
+  <div class="form-footer">
+    <img src="../Ảnh/Anhcute.gif" alt="ảnh nhân vật">
+    <button type="submit" id="submitButton">Nộp</button>
+  </div>
+</div>
+ <div class="footer">
+  <a href="https://github.com/Dungnony" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" alt="github" style="width: 50px; height: 50px; padding-top: 10px;">
+  </a>
+  <a href="https://www.facebook.com/coder.bi.suy/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook của tôi" style="width: 50px; height: 50px; padding-top: 10px; padding-left: 20px">
+</div>
+<div id="customAlert">✅ Nộp thành công!</div>
+<script>
+  const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+</script>
