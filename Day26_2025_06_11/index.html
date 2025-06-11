@@ -1,0 +1,44 @@
+<!-- Hôm nay ngày 11/6/2025 e sẽ thực hiện css lại trang archive và thêm chức năng js cho trang-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+          const alertBox = document.getElementById('customAlert');
+  const inputField = document.getElementById('inputField');
+  const submitButton = document.getElementById('submitButton');
+  alertBox.style.display = 'none';
+  submitButton.addEventListener('click', function () {
+    const value = inputField.value.trim();
+    if (value.length > 0) {
+      inputField.value = '';        
+      alertBox.style.display = 'block';  
+      setTimeout(() => {
+        alertBox.style.display = 'none'; 
+      }, 1000);
+    }
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+  );
+const posts = document.querySelectorAll('.post');
+
+posts.forEach(post => {
+  post.addEventListener('mouseover', function () {
+    post.style.transform = 'scale(1.05)';
+    post.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.1)';
+  });
+
+  post.addEventListener('mouseout', function () {
+    post.style.transform = 'scale(1)';
+    post.style.boxShadow = 'none';
+  });
+});
+    </script>
+ </body>
+ </html>
